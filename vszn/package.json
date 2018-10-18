@@ -1,5 +1,5 @@
 {
-    "name": "vszn",
+    "name": "ZetaNote",
     "displayName": "zetanote",
     "description": "vscode zetanote extension",
     "version": "0.0.1",
@@ -25,14 +25,35 @@
                 "title": "ZetaNote: Get Current Workspace Note"
             },
             {
-                "command": "extension.addZetaNote",
-                "title": "ZetaNote: Add Note to ZetaNote"
+                "command": "extension.updateZetaNote",
+                "title": "ZetaNote: Update Note to ZetaNote"
             },
             {
                 "command": "extension.syncZetaNote",
                 "title": "ZetaNote: Sync to your ZetaNote"
+            },
+            {
+                "command": "markdown.extension.openNotePreview",
+                "title": "ZetaNote: Open note in preview window"
             }
-        ]
+        ],
+        "markdown.markdownItPlugins": true,
+        "configuration": {
+            "title": "ZetaNote Configuration",
+            "type": "object",
+            "properties": {
+                "zetanote.token": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Copy your ZetaNote Developer Token from the website."
+                },
+                "zetanote.email": {
+                    "type": "string",
+                    "default": "bochentheone@gmail.com",
+                    "description": "Your ZetaNote email address."
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
